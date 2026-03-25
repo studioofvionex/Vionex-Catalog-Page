@@ -1,0 +1,6 @@
+packages:
+  "framer-motion": "For premium smooth entry animations and scroll reveals to achieve an editorial feel"
+
+notes:
+  - using @workspace/api-client-react for data fetching
+  - applying an ultra-minimalist, editorial design system with high-contrast monochrome

@@ -14,3 +14,19 @@ import * as zod from "zod";
 export const HealthCheckResponse = zod.object({
   status: zod.string(),
 });
+
+/**
+ * Fetches and parses the Redbubble RSS feed and returns product listings
+ * @summary Get products from Redbubble RSS
+ */
+export const GetProductsResponse = zod.object({
+  products: zod.array(
+    zod.object({
+      id: zod.string(),
+      title: zod.string(),
+      imageUrl: zod.string(),
+      productUrl: zod.string(),
+      description: zod.string(),
+    }),
+  ),
+});

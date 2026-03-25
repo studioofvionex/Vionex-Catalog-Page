@@ -5,9 +5,6 @@
  * API specification
  * OpenAPI spec version: 0.1.0
  */
-export interface HealthStatus {
-  status: string;
-}
 
 export interface Product {
   id: string;
@@ -15,13 +12,4 @@ export interface Product {
   imageUrl: string;
   productUrl: string;
   description: string;
-}
-
-export interface ProductsResponse {
-  products: Product[];
-}
-
-export interface ErrorResponse {
-  error: string;
-  message: string;
 }

@@ -1,6 +1,5 @@
 openapi: 3.1.0
 info:
-  # Do not change the title, if the title changes, the import paths will be broken
   title: Api
   version: 0.1.0
   description: API specification
@@ -10,6 +9,8 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: products
+    description: Product catalog operations
 paths:
   /healthz:
     get:
@@ -24,6 +25,25 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /products:
+    get:
+      operationId: getProducts
+      tags: [products]
+      summary: Get products from Redbubble RSS
+      description: Fetches and parses the Redbubble RSS feed and returns product listings
+      responses:
+        "200":
+          description: List of products
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProductsResponse"
+        "500":
+          description: Error fetching products
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
 components:
   schemas:
     HealthStatus:
@@ -33,4 +53,41 @@ components:
           type: string
       required:
         - status
-
+    Product:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        imageUrl:
+          type: string
+        productUrl:
+          type: string
+        description:
+          type: string
+      required:
+        - id
+        - title
+        - imageUrl
+        - productUrl
+        - description
+    ProductsResponse:
+      type: object
+      properties:
+        products:
+          type: array
+          items:
+            $ref: "#/components/schemas/Product"
+      required:
+        - products
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+        message:
+          type: string
+      required:
+        - error
+        - message

@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "VIONEX STUDIO"
+version = "1.0.0"
+id = "artifacts/vionex-studio"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18334
+
+[services.development]
+run = "pnpm --filter @workspace/vionex-studio run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/vionex-studio", "run", "build" ]
+publicDir = "artifacts/vionex-studio/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18334"
+BASE_PATH = "/"
