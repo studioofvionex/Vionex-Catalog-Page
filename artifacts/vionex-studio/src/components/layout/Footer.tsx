@@ -7,7 +7,7 @@ export function Footer() {
         </p>
         
         <a 
-          href="https://pinterest.com/vionexstudio" 
+          href="https://www.pinterest.com/studioofvionex/" 
           target="_blank" 
           rel="noopener noreferrer"
           className="mt-8 inline-flex items-center space-x-2 text-sm uppercase tracking-widest text-foreground hover:text-muted-foreground transition-colors duration-300"

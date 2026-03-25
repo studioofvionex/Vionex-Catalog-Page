@@ -1,6 +1,6 @@
 kind = "web"
 previewPath = "/"
-title = "VIONEX STUDIO"
+title = "studioofvionex"
 version = "1.0.0"
 id = "artifacts/vionex-studio"
 router = "path"
