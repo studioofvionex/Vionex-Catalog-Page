@@ -14,7 +14,7 @@ export function Header() {
         <div className="mt-8 flex items-center justify-center space-x-4">
           <div className="h-px w-8 bg-foreground/20" />
           <p className="text-xs sm:text-sm text-muted-foreground uppercase tracking-[0.3em] font-medium">
-            Curated Minimalist Fashion
+            Minimalist & Geometric Aesthetics
           </p>
           <div className="h-px w-8 bg-foreground/20" />
         </div>
